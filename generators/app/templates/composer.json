@@ -1,0 +1,36 @@
+{
+    "name": "<%= project.name %>",
+    "description": "<%= project.description %>",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "<%= author.ame %>",
+            "email": "<%= author.email %>"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "<%= project.phpNamespace %>\\": "src/<%= project.namespace %>"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "webmozart/assert": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "friendsofphp/php-cs-fixer": "^2.10",
+        "phpmd/phpmd": "@stable"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "lint": "bin/php-cs-fixer fix src/ --rules=@PSR2 --diff --ansi --dry-run",
+        "lint:fix": "php-cs-fixer fix src/ --rules=@PSR2 --ansi",
+        "mess": "bin/phpmd src/ text ./phpmd.xml",
+        "test": "bin/phpunit -c tests"
+    }
+}

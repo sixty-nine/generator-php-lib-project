@@ -1,0 +1,5 @@
+vendor/
+bin/*
+tests/coverage/*
+.php_cs.cache
+
