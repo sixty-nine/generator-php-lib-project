@@ -21,6 +21,8 @@ module.exports = class extends Generator {
     }
 
     configuring() {
+        this.cfg.save(); // Force to reload the config
+
         if (!this.cfg.get('paths', 'root')) {
             this.cfg.set('paths', 'src', 'src/' + this.cfg.get('project', 'namespace'));
             this.cfg.set(
