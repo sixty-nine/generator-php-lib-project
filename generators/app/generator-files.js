@@ -16,6 +16,7 @@ module.exports = class extends Generator {
             const files = [
                 '.editorconfig',
                 '.gitignore',
+                '.gitattributes',
                 '.travis.yml',
                 'phpmd.xml',
                 'tests/phpunit.xml',
